@@ -30,10 +30,8 @@ resource "aws_instance" "this" {
   key_name = var.key_name
 
   root_block_device {
-    volume_type           = "gp3"
+    volume_type           = "gp2"
     volume_size           = 20
-    iops                  = 3000 # Baseline IOPS for gp3 (included at no extra cost)
-    throughput            = 125  # Baseline throughput in MB/s for gp3 (included at no extra cost)
     delete_on_termination = true
   }
 
