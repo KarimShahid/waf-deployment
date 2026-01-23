@@ -1,31 +1,45 @@
+variable "instance_type" {
+  description = "EC2 instance type"
+  type        = string
+}
+
+variable "subnet_id" {
+  description = "Subnet ID"
+  type        = string
+}
+
+variable "sg_id" {
+  description = "Security group ID"
+  type        = string
+}
+
+
+variable "root_volume_type" {
+  description = "Root volume type"
+  type        = string
+}
+
+variable "root_volume_size" {
+  description = "Root volume size in GB"
+  type        = number
+}
+
+variable "delete_on_termination" {
+  description = "Delete root volume on termination"
+  type        = bool
+}
+
 variable "environment" {
   description = "Environment name"
   type        = string
 }
 
-
 variable "tags" {
-  description = "Common resource tags"
+  description = "Tags"
   type        = map(string)
-
-
-variable "subnet_id" {
-  description = "Subnet ID where EC2 instance will be launched"
-  type        = string
-}
-
-
-variable "sg_id" {
-  type = string
-  description = "Security Group ID where the web server will be deployed"
-}
-
-variable "key_name" {
-  type        = string
-  description = "EC2 key pair name"
 }
 
 variable "iam_instance_profile" {
-  description = "IAM instance profile to attach to the EC2 instance"
+  description = "IAM instance profile name"
   type        = string
 }
