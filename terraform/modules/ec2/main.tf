@@ -23,7 +23,7 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "this" {
   ami                    = data.aws_ami.ubuntu.id
-  instance_type          = "t3.medium"
+  instance_type          = var.instance_type
   subnet_id              = var.subnet_id
   vpc_security_group_ids = [var.sg_id]
   iam_instance_profile   = aws_iam_instance_profile.firewall.name
