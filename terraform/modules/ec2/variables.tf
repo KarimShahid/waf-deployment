@@ -1,19 +1,12 @@
 variable "environment" {
   description = "Environment name"
   type        = string
-  default     = "prod-firewall"
 }
 
 
 variable "tags" {
   description = "Common resource tags"
   type        = map(string)
-  default = {
-    Project     = "firewall"
-    Environment = "prod-firewall"
-    ManagedBy   = "terraform"
-  }
-}
 
 
 variable "subnet_id" {
@@ -30,4 +23,9 @@ variable "sg_id" {
 variable "key_name" {
   type        = string
   description = "EC2 key pair name"
+}
+
+variable "iam_instance_profile" {
+  description = "IAM instance profile to attach to the EC2 instance"
+  type        = string
 }
