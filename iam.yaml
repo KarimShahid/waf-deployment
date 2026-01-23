@@ -62,7 +62,7 @@ Resources:
   TerraformSecret:
     Type: AWS::SecretsManager::Secret
     Properties:
-    Name: terraform/iam/Adex
+      Name: terraform/iam/Adex
       Description: Terraform IAM Credentials
       SecretString: !Sub |
         {
