@@ -1,3 +1,13 @@
+name: Terraform Backend Bootstrap (S3)
+
+on:
+  workflow_dispatch:
+    inputs:
+      working_directory:
+        description: "Terraform bootstrap directory (e.g. terraform/bootstrap/s3)"
+        required: true
+        default: terraform/bootstrap/s3
+
 jobs:
   terraform:
     runs-on: ubuntu-latest
@@ -15,17 +25,17 @@ jobs:
           terraform_version: 1.5.7
 
       - name: Terraform Init
-        working-directory: ./terraform/bootstrap/s3
+        working-directory: ./${{ inputs.working_directory }}
         run: terraform init
 
       - name: Terraform Validate
-        working-directory: ./terraform/bootstrap/s3
+        working-directory: ./${{ inputs.working_directory }}
         run: terraform validate
 
       - name: Terraform Plan
-        working-directory: ./terraform/bootstrap/s3
+        working-directory: ./${{ inputs.working_directory }}
         run: terraform plan
 
       - name: Terraform Apply
-        working-directory: ./terraform/bootstrap/s3
+        working-directory: ./${{ inputs.working_directory }}
         run: terraform apply -auto-approve
