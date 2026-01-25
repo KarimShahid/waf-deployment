@@ -40,5 +40,5 @@ module "ec2" {
   tags                 = var.tags
   environment          = var.environment
 
-  iam_instance_profile = aws_iam_instance_profile.firewall.name
+  iam_instance_profile_name = aws_iam_instance_profile.firewall.name
 }
