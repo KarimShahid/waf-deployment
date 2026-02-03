@@ -54,3 +54,8 @@ variable "number_of_subnets" {
     error_message = "number_of_subnets must be one of: 0, 1, 2, 3, 4, or 6."
   }
 }
+
+variable "map_public_ip_on_launch" {
+  description = "Auto assign public ip on launch"
+  type = bool
+}

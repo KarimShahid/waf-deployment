@@ -84,3 +84,9 @@ variable "private_subnets_cidr_block" {
     error_message = "All private_subnets_cidr_block values must be valid CIDR blocks."
 }
 }
+
+variable "map_public_ip_on_launch" {
+  description = "Auto assign public ip on launch"
+  type = bool
+  default = false
+}
