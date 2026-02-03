@@ -29,6 +29,7 @@ The module is designed to be **AZ-aware**, reusable, and suitable for production
 | `number_of_az`      | Number of Availability Zones                | `number`       |
 | `number_of_subnets` | Number of subnets to create                 | `number`       |
 | `subnet_type`       | Subnet type: `public` or `private`          | `string`       |
+| `map_public_ip_on_launch`       | Auto assign public ip on launch: `true` or `false`          | `bool`       |
 
 ---
 
@@ -56,6 +57,7 @@ module "public_subnets" {
   number_of_subnets = var.number_of_public_subnets
   subnet_type       = "public"
   gateway_id        = aws_internet_gateway.internet_gateway.id
+  map_public_ip_on_launch = false
 }
 ```
 

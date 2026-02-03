@@ -71,6 +71,7 @@ module "vpc" {
 | --------------------------- | ------------------------------ | -------------- | -------- |
 | `number_of_public_subnets`  | Number of public subnets       | `number`       | yes      |
 | `public_subnets_cidr_block` | CIDR blocks for public subnets | `list(string)` | yes      |
+| `map_public_ip_on_launch` | Auto assign public ip on launch | `bool`          | yes      |
 
 ---
 
